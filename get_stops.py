@@ -1,20 +1,18 @@
 import csv
 
-filename = "google_transit/stops.txt"
-fields = []
-stops = []
 
-train = "L"
+def get_train_stops(train):
 
-with open(filename, "r") as file:
-    filereader = csv.reader(file)
+    filename = "google_transit/stops.txt"
+    fields = []
+    stops = []
 
-    fields = next(filereader)
+    with open(filename, "r") as file:
+        filereader = csv.reader(file)
 
-    for row in filereader:
-        if row[0][0] == "L":
-            stops.append(row)
+        fields = next(filereader)
 
-
-print(fields)
-print(stops)
+        for row in filereader:
+            if row[0][0] == train:
+                stops.append(row)
+    return stops
