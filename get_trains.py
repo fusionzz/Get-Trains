@@ -1,4 +1,5 @@
 import nyct_subway_pb2
+import gtfs_realtime_pb2
 import requests
 from google.protobuf.json_format import MessageToDict
 
@@ -7,6 +8,4 @@ response = requests.get('https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/
 feed.ParseFromString(response.content)
 f = open("train_info.txt", "w")
 f.write(str(feed))
-#print(MessageToDict(feed.entity))
-print(vars(feed.entity))
 f.close()
