@@ -26,5 +26,5 @@ def get_stops_no_direction():
                 stops.append(row)
     return stops
 
-#print(get_stops_no_direction())
+print(len(get_stops_no_direction()))
 

@@ -4,9 +4,11 @@ import os
 import time
 
 stops = {}
+readable_stops = {}
 temp_stops = get_stops.get_stops_no_direction()
 for stop in temp_stops:
     stops[stop[0]] = 0
+    readable_stops[stop[0]] = stop[1]
 
 os.system("cls")
 
@@ -40,6 +42,7 @@ while True:
                 stops[stop] = 0
 
     print(stops)
+    print(readable_stops)
     end = time.time()
     print("The time of execution of above program is :",
       (end-start) * 10**3, "ms")

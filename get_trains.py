@@ -7,7 +7,8 @@ def get_feed(url):
     feed = gtfs_realtime_pb2.FeedMessage()
     response = requests.get(url)
     feed.ParseFromString(response.content)
-    # f = open("train_info.txt", "w")
-    # f.write(str(feed))
-    # f.close()
+    f = open("train_info.txt", "w")
+    f.write(str(feed))
+    f.close()
     return feed
+get_feed("https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-nqrw")
